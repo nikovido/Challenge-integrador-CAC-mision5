@@ -1,0 +1,105 @@
+
+    <%- include('../../partials/headerAdmin'); -%>
+
+    <main id="create">
+        <section class="create-item container">
+            
+            <h2 class="create__title" >CREAR NUEVO ITEM</h2>
+            
+            <div class="form">
+
+                <form action="" method="post">
+                
+                    <div class="form__block">
+    
+                        <label class="form__label" for="category">Categoria:</label>
+                        <select class="form__select" name="category" id="category" aria-placeholder="Seleccionar">
+                            <% categories.forEach((category, i) => { %>
+                                <option value="<%= i+1%>"><%= category.category_name%></option>
+                              <% }); %>
+                        </select>
+        
+                        <label class="form__label" for="license">Licencia:</label>
+                        <select class="form__select" name="license" id="license" aria-placeholder="Seleccionar">
+                            <% licences.forEach((licence, i) => { %>
+                                <option value="<%= i+1%>"><%= licence.licence_name%></option>
+                              <% }); %>
+                        </select>
+    
+                    </div>
+                  
+                    <div class="form__block">
+        
+                    <label class="form__label" for="item-name">Nombre del producto:</label>
+                    <input class="form__input" name="item-name" type="text" placeholder="Kakashi Hatake Naruto Shipuden Saga">
+    
+                    </div>
+    
+                    <div class="form__block">
+    
+                        <textarea class="form__textarea" name="description" id="description" cols="30" rows="10" placeholder="Descripción del producto" required></textarea>
+    
+                    </div>
+                    
+    
+                    <div class="form__block">
+    
+                        <label class="form__label" for="ska">SKA:</label>
+                        <input class="form__input" name="ska" id="ska" type="text" placeholder="SSK11AB001">
+        
+                        <label class="form__label" for="price">Precio:</label>
+                        <input class="form__input" name="price" id="price" type="number" placeholder="$0.000,00" min="1">
+        
+                        <label class="form__label" for="stock">Stock:</label>
+                        <input class="form__input" name="stock" id="stock" type="number" placeholder="0" min="1">
+        
+                    </div>
+                   
+                    <div class="form__block">
+    
+                    <label class="form__label" for="discount">Descuento:</label>
+                    <input class="form__input" name="discount" id="discount" type="number" placeholder="0%">
+    
+                    <label class="form__label" for="dues">Cuotas</label>
+                    <select class="form__select" name="dues" id="dues" aria-placeholder="3 Cuotas sin interés">
+                        <option value="0">Sin cuotas</option>
+                        <option value="3">3 cuotas s/ interés</option>
+                        <option value="6">6 cuotas s/ interés</option>
+                        <option value="9">9 cuotas s/ interés</option>
+                        <option value="12">12 cuotas s/ interés</option>
+                        <option value="18">18 cuotas s/ interés</option>
+                        <option value="24">24 cuotas s/ interés</option>
+                    </select>
+    
+                    </div>
+                    
+    
+                    <div class="form__block">
+    
+                        <label class="form__label" for="image">Imagen:</label>
+                        <input class="form__input" name="image" id="image" type="file" multiple>
+    
+                    </div>
+    
+    
+                    <div class="form__block">
+    
+                        <input class="submit-button" type="submit" value="Agregar Producto">
+                        <input class="reset-button" class="reset-button" type="reset" value="Limpiar">
+    
+                    </div>
+    
+    
+                </form>
+
+            </div>
+            
+        </section>
+    </main>
+
+    <%- include('../../partials/footer'); -%>
+
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+</body>
+</html>
